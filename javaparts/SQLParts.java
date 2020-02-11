@@ -6,8 +6,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
 public class SQLParts {
 	private String sql ;
 	private String tableName;
@@ -19,8 +17,6 @@ public class SQLParts {
 		connectiveMySQL(URL,USERNAME,PASSWORD);
 		tableName = tbName;
 	}
-	
-	
 	
 	//MySQL接続
 	public void connectiveMySQL(String URL,String USERNAME,String PASSWORD){
@@ -44,8 +40,7 @@ public class SQLParts {
 	//Get 見つかった場合はカンマ区切りで1件分のデータ取得。見つからなかった場合は空値。
 	public String getData(String userid,String password){
 		String tmpValue = "";
-		sql = "SELECT * FROM " + tableName + 
-								 " WHERE userid = '" + userid + "' AND password = '" + password + "';";
+		sql = "SELECT * FROM " + tableName + " WHERE userid = '" + userid + "' AND password = '" + password + "';";
 		try{
 			ResultSet rset = statement.executeQuery(sql);
 			ResultSetMetaData meta = rset.getMetaData();
@@ -64,12 +59,10 @@ public class SQLParts {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
-		
 		return tmpValue;
 	}
 	
-	
-	//Select
+	//Select↓未使用パーツ
 	public void printAllData(){
 		String tmpValue = "";
 		sql = "SELECT * FROM " + tableName +";";
@@ -91,7 +84,6 @@ public class SQLParts {
 			e.printStackTrace();
 		}
 		
-		
 	}
 	
 	
@@ -100,7 +92,6 @@ public class SQLParts {
 		sql = "INSERT INTO " + tableName + " VALUES('" + userid + "','"+ password + "','" + name + "');";
 		executeSQL();
 	}
-	
 	
 	//Update
 	public void updateData(String userid,String oldpass,String newpass,String oldname,String newname){
@@ -164,6 +155,5 @@ public class SQLParts {
 	    }
 		
 	}
-	
 	
 }
