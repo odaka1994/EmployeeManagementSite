@@ -2,9 +2,7 @@ package javaparts;
 
 import static javaparts.CommonData.*;
 import static javaparts.CommonMethod.*;
-
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +21,6 @@ public class LoginServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 				    throws ServletException, IOException {
-		
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -42,19 +39,13 @@ public class LoginServlet extends HttpServlet {
 		
 		if (data.length() != 0){
 			//該当データあり
-			
 			gotopage = "/JSP/menu.jsp";
 			String[] arydata = data.split(","); 
 			String name =arydata[2];
 			saveCookie(request,response,userid,pass,name);
-			
 		}
-		
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher(gotopage);
 		dispatch.forward(request, response);
-		
-		
 	}
-	
 }
