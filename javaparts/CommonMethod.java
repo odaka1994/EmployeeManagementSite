@@ -1,14 +1,11 @@
 package javaparts;
 
 import java.text.Normalizer;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CommonMethod{
-	
-	
 	
 	//半角化・空白削除
 	public static String HalfSizeAndDeleteBlank(String targetvalue){
@@ -17,7 +14,6 @@ public class CommonMethod{
 		
 		return targetvalue;
 	}
-	
 	
 	//対象クッキーを取得（該当クッキーが存在しない場合、Nullを返却）
 	public static Cookie getCookie(HttpServletRequest request,String cookiename){
@@ -69,7 +65,6 @@ public class CommonMethod{
 		return reslutvalue;
 	}
 	
-	
 	//クッキーを保存する（既に存在する場合は値を上書き）
 	public static void saveCookie(HttpServletRequest request,HttpServletResponse response,
 			String userid,String pass,String name){
@@ -82,7 +77,4 @@ public class CommonMethod{
 		response.addCookie(cookie2);
 		response.addCookie(cookie3);
 	}
-	
-	
 }
-
