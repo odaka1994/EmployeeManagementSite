@@ -1,5 +1,3 @@
-
-
 //空白削除
 function deleteBlank(targetvalue){
 	
@@ -7,8 +5,6 @@ function deleteBlank(targetvalue){
     return targetvalue
 }
 
-
 function goto(){
 	document.location.href = gotopage;
 }
-
