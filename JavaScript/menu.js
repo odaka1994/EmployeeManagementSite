@@ -1,4 +1,3 @@
-
 var gotopage = "/EmployeeManagementSite/JSP/";
 
 function displaydata(){
@@ -11,7 +10,6 @@ function changedata(){
 	goto();
 }
 
-
 function isDelete(){
 	var ret = confirm("データを削除します。\nよろしいですか？");
 	
@@ -21,6 +19,4 @@ function isDelete(){
 		alert("キャンセルしました。");
 		return false;
 	}
-	
 }
-
