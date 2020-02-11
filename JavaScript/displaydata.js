@@ -32,4 +32,3 @@ function init(){
 	document.getElementById("input3").defaultValue = name;
 	
 	}
-
