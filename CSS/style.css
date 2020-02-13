@@ -31,6 +31,10 @@ div.leftspace2{
 div.leftspace3{
 	margin-left:365px;
 }
+div.linkmsg{
+	margin-left:285px;
+	font-size: 15px;
+}
 p.errmsg{
 	color: red;
 }
