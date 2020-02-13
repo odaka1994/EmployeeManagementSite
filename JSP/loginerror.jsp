@@ -10,8 +10,16 @@
 		<div class = "top">
 			<p>ログイン</p>
 		</div>
+		
 		<form action = "/EmployeeManagementSite/LoginServlet" method = "post">
 			<div class = "topspace1"></div>
+			<div class = "linkmsg">
+				<a href ="/EmployeeManagementSite/img/System_Constitution.png" target="_blank">社員登録システム構成図</a>
+			</div>
+			<div class = "linkmsg">
+				<a href ="/EmployeeManagementSite/img/System_DB.png" target="_blank">社員登録システム_DB設計</a>
+			</div>
+			
 			<div class = "leftspace1">
 				<p>社員登録システム</p>
 				<table class = "commontable">
