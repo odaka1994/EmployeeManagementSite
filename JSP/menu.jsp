@@ -18,7 +18,7 @@
 			<div class = "leftspace1">
 				<input type = "button" class = "menubutton" name = "mb1" onclick = "displaydata()" value = "ユーザー情報表示">
 				<input type = "button" class = "menubutton" name = "mb2" onclick = "changedata()" value = "ユーザー情報変更">
-				<input type = "submit" class = "menubutton" name = "mb3" onclick = "return isDelete()" value = "退社">
+				<input type = "submit" class = "menubutton" name = "mb3" onclick = "return isDelete()" value = "退職">
 			</div>
 		</form>
 	</body>
