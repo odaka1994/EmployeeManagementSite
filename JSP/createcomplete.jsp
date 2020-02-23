@@ -3,6 +3,7 @@
 	<title>完了</title>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/EmployeeManagementSite/CSS/style.css">
+		<script type = "text/javascript" src = "/EmployeeManagementSite/JavaScript/commonmethod.js"></script>
 	</head>
 	<body>
 		<div class = "top">
