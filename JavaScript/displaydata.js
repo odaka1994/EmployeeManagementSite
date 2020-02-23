@@ -9,9 +9,10 @@ function init(){
 	var cookiesArray = cookies.split(';');
 	var cArray;
 	
-	for(var c of cookiesArray){
+	//IE11では拡張for非対応な為for文で対応
+	for(var i =0; i < cookiesArray.length; i++){
 		
-	    cArray = c.split('=');
+	    cArray = cookiesArray[i].split('=');
 	    switch( cArray[0].replace(/\s+/g, "") ){
 	    case "userid":
 	    	userid = cArray[1].replace(/\s+/g, "");
@@ -27,8 +28,8 @@ function init(){
 	    }
 	}
 	
-	document.getElementById("input1").defaultValue = userid;
-	document.getElementById("input2").defaultValue = pass;
-	document.getElementById("input3").defaultValue = name;
-	
+	//IE11ではdefaultValueが非対応な為valueで対応	
+	document.getElementById("input1").value = userid;
+	document.getElementById("input2").value = pass;
+	document.getElementById("input3").value = name;
 	}
