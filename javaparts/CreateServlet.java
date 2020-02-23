@@ -24,7 +24,6 @@ public class CreateServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 					throws ServletException, IOException {
-		
 		//全角文字の文字化け対策
 		request.setCharacterEncoding("UTF-8");		
 		
@@ -33,13 +32,20 @@ public class CreateServlet extends HttpServlet {
 		String pass = HalfSizeAndDeleteBlank(request.getParameter("password"));
 		String name = HalfSizeAndDeleteBlank(request.getParameter("name"));
 		
+		String gotopage = "";
 		SQLParts SQLP = new SQLParts(URL, USERNAME, PASSWORD,tableName);
-		SQLP.insertData(userid, pass, name);
+		String data = SQLP.getData(userid,pass);
+		if (data.length() != 0){
+			//該当データが存在する場合、エラーとする
+			gotopage = "/JSP/createdataerror.jsp"; 
+		}else{
+			gotopage = "/JSP/createcomplete.jsp";
+			SQLP.insertData(userid, pass, name);
+			saveCookie(request,response,userid,pass,name);
+		}
+		
 		SQLP.closeMySQL();
 		
-		saveCookie(request,response,userid,pass,name);
-		
-		String gotopage = "/JSP/createcomplete.jsp";
 		RequestDispatcher dispatch = request.getRequestDispatcher(gotopage);
 		dispatch.forward(request, response);
 	}
