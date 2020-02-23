@@ -29,9 +29,9 @@ public class SQLParts {
 	try{
 		connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		statement = connection.createStatement();
-		System.out.println("MySQLconnectinveOK");
+		System.out.println("MySQLconnectiveOK");
 	}catch(SQLException e){
-		System.out.println("MySQLconnectinveNG");
+		System.out.println("MySQLconnectiveNG");
 		e.printStackTrace();
 	}
 	
