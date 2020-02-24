@@ -62,6 +62,22 @@ public class SQLParts {
 		return tmpValue;
 	}
 	
+	public boolean isUserExists(String userid){
+		boolean isExists = false;
+		sql = "SELECT * FROM " + tableName + 
+							" WHERE userid = '" + userid + "' ;";
+		System.out.println(sql);
+		try{
+			ResultSet rset = statement.executeQuery(sql);
+			
+			isExists = rset.next();
+			rset.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return isExists;
+	}
+	
 	//Select↓未使用パーツ
 	public void printAllData(){
 		String tmpValue = "";
